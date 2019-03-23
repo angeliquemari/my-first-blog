@@ -12,7 +12,11 @@
             <div class="date">
                 {{ post.published_date }}
             </div>
+        {% else %}
+            <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
         {% endif %}
+
+    {% if comments %}
     </div>
         <h4>Comments</h4>
     {% for comment in comments %}
@@ -27,5 +31,6 @@
             </div>
         </p>
     {% endfor %}
+    {% endif %}
 
 {% endblock %}
