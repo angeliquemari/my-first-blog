@@ -14,4 +14,18 @@
             </div>
         {% endif %}
     </div>
+        <h4>Comments</h4>
+    {% for comment in comments %}
+        <p>
+            {{ comment.comment }}
+        </p>
+        <div class="date">
+            {{ comment.author }}
+        </div>
+            <div class="date">
+                {{ comment.comment_date }}
+            </div>
+        </p>
+    {% endfor %}
+
 {% endblock %}
